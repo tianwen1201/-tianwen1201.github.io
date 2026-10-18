@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>不替学生读懂：生成式 AI 阅读教练的设计与迭代｜韩天雯</title>
+<meta name="description" content="我的中高级综合课每周三次、每次五十分钟，课堂上没有专门的阅读训练时间。学期第一周，我请三位学生课外阅读一篇真实的留学生博客。三位学生都把生词列为最大的障碍：两位在阅读工具之外查词，一位把文章切成小段逐段“啃”，她说这样“花了很长时间，感觉很……">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%239a5a68'/><text x='32' y='45' font-size='34' text-anchor='middle' fill='white' font-family='serif'>韩</text></svg>">
+</head>
+<body>
+<div class="scene" style="background-image:url('../images/landscape.svg')">
+  <header class="site-header">
+    <a class="brand" href="../index.html"><span class="brand-zh">韩天雯</span><span class="brand-star" aria-hidden="true">✦</span></a>
+    <nav class="site-nav" aria-label="主导航"><a href="../index.html">个人介绍</a><a href="../projects.html">Projects</a><a href="../teaching.html">中文教学</a><a href="../technology.html" aria-current="page">Technology</a></nav>
+    <a class="btn btn-dark header-cta" href="mailto:than1@olemiss.edu">联系我</a>
+  </header>
+  
+</div>
+<main class="wrap">
+<article class="post">
+<a class="back" href="../technology.html">← Technology-Enhanced Teaching</a>
+<div class="pills"><span class="pill pill-level">中高级</span><span class="pill">阅读理解</span><span class="pill">AI 工具设计</span><span class="pill">TCLT 2026 报告</span></div>
+<h1>不替学生读懂：生成式 AI 阅读教练的设计与迭代</h1>
+<p class="en-sub" lang="en">Not Reading for Them: Designing a Generative AI Reading Coach</p>
+<div class="prose"><p><em>本文内容曾在 TCLT 2026 国际汉语教学研讨会上报告：Designing a Generative AI Reading Coach to Scaffold L2 Chinese Discourse Comprehension: A Design-Based Study。</em></p>
+<p class="try"><a class="btn" href="https://reading-coach.hanlaoshi.workers.dev/" target="_blank" rel="noopener">体验 Chinese Reading Coach →</a><span>　（学生使用版，进入时需输入中文名字）</span></p>
+<h2>问题：学生说“生词太多”，但困难不止于此</h2>
+<p>我的中高级综合课每周三次、每次五十分钟，课堂上没有专门的阅读训练时间。学期第一周，我请三位学生课外阅读一篇真实的留学生博客。三位学生都把生词列为最大的障碍：两位在阅读工具之外查词，一位把文章切成小段逐段“啃”，她说这样“花了很长时间，感觉很没效率”。</p>
+<p>但从她们的回答中，我看到了另一个问题：三位学生中有两位，最初的表述只停留在文章的“话题”层面，说出了文章“关于什么”，却没有说出作者“在说什么”。问题不只是词汇，而是如何把局部的理解整合为全文的意义（Kintsch &amp; van Dijk, 1978）。</p>
+<h2>为什么是 chatbot，又为什么要格外小心</h2>
+<p>一对一的陪读，教师很难每周为每位学生提供；AI 却可以根据学生当下的回答进行追问，并留下完整的过程记录。已有研究表明，依据教学原则设计的 AI 导师，学习效果可以优于课堂主动学习（Kestin et al., 2025）。但风险同样明显：缺乏教学护栏的生成式 AI 可能损害学习（Bastani et al., 2025）；当学生用 AI 替代自己的思考时，理解会变浅，基础较弱的学生受影响更大（Lehmann et al., 2024）。因此，我关心的不是“用不用 AI”，而是如何让 AI 帮忙，又不替学生思考。</p>
+<h2>设计：七步阅读旅程与四条原则</h2>
+<figure><img alt="Reading Journey 的七个步骤（学生界面）" src="../images/reading-journey.png" / loading="lazy"><figcaption>Reading Journey 的七个步骤（学生界面）</figcaption></figure>
+<p>学生看到的界面是一个七步的阅读旅程：先独立读完全文；用一两句话说出初步理解；选两处信息说明它们的关系；做一个有文本依据的推断；回头检查最初的理解，决定保留、修改还是补充；用自己的话说出全文主旨；最后做简短反思。整个过程中，阅读教练不翻译全文，也不直接给出答案，只是追问。</p>
+<p>背后有四条设计原则：<strong>先读后谈</strong>；<strong>逐级提示，不给答案</strong>；<strong>局部绕道，回到语篇</strong>——遇到生词时，学生可以选择“直接告诉我意思”“给我三个意思猜一个”或“给我线索自己推”，解决后回到原来的任务；<strong>以最初理解为锚点</strong>，在检查环节回头修正自己的理解。这些原则对应了支架教学中“依随、逐步撤除、把责任交还学生”的要求（van de Pol, Volman, &amp; Beishuizen, 2010）。</p>
+<h2>迭代：每一次修改都来自数据</h2>
+<p>这是一项形成性实验，也就是在真实教学中边用边改，并把每次调整及其依据本身作为研究数据（Reinking &amp; Bradley, 2008）。第一周我发现，学生处理生词全都发生在工具之外，记录中根本看不到；于是第三周起，我加入了“这不是精读，不需要每个字都懂”的说明和生词三选一机制，并在会后提供生词表。第七周，我又在阅读任务中附上词汇表，一位学生反馈：“这篇文章容易理解多了，词汇表真的很有帮助。”</p>
+<h2>观察到的变化</h2>
+<p>在 13 次对话中，有 11 次学生的主旨表述层次在同一次对话中得到提高。比如一位学生，最初只说“新能源车越来越受欢迎”，最后说出了“这个产业在政府支持下发展起来，现在已经可以自己站稳了”——从“关于什么”走到了“在说什么”。</p>
+<p>学生也开始回到文本修正自己的理解。一位学生起初把装备花费理解为“让人不敢开始骑车的缺点”，阅读教练只问了一句：文章真的是这样说的吗？她回到原文，修正为“新手容易掉进花钱的陷阱，但骑车本身门槛并不高”。到第七周，那位曾把文章切成小段逐段阅读的学生说，下次她要先把全文扫一遍，抓住大意，再看细节。</p>
+<h2>诚实地看待不足</h2>
+<p>这一轮设计也有没做到的地方。最明显的是：学生越弱，阅读教练越容易替她把主旨说出来，这正是我需要改进的地方。生词三选一机制的使用也远低于预期，而且有迹象显示，学生仍会在工具之外寻求其他帮助。下一轮，我会把主旨环节改为逐级提示，从“作者关于它说了什么”，到“总的来说”“这说明”等结构线索，再到在三个句子中识别主旨，最后由学生自己重写；阅读教练不再替学生写出最终主旨。</p>
+<p>回头看，我最想强调的一点是：学生说不出主旨，不等于没有理解。话题层面的初始表述，可以看作建构主旨的起点。AI 的价值，不是替学生理解，而是让学生自己的理解被看见、被追问、被修改。</p>
+<h2>参考文献</h2>
+<ul class="refs">
+<li>Bastani, H., et al. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. <em>Proceedings of the National Academy of Sciences</em>.</li>
+<li>Kestin, G., et al. (2025). AI tutoring outperforms in-class active learning: An RCT introducing a novel research-based design in an authentic educational setting. <em>Scientific Reports</em>.</li>
+<li>Kintsch, W., &amp; van Dijk, T. A. (1978). Toward a model of text comprehension and production. <em>Psychological Review, 85</em>(5), 363–394.</li>
+<li>Lehmann, M., Cornelius, P. B., &amp; Sting, F. J. (2024). AI meets the classroom: When do large language models harm learning? arXiv preprint 2409.09047.</li>
+<li>Reinking, D., &amp; Bradley, B. A. (2008). <em>On formative and design experiments</em>. Teachers College Press.</li>
+<li>van de Pol, J., Volman, M., &amp; Beishuizen, J. (2010). Scaffolding in teacher–student interaction: A decade of research. <em>Educational Psychology Review, 22</em>, 271–296.</li>
+</ul></div>
+<nav class="pager"><span></span><a class="next" href="tech-listening-lab.html"><small>下一篇 →</small>Hear it, Notice it, Say it：新闻听力练习平台 Listening Lab</a></nav>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p class="script">thanks for stopping by</p>
+    <p>韩天雯 Tianwen Han · University of Mississippi · than1@olemiss.edu</p>
+  </div>
+</footer>
+</body>
+</html>

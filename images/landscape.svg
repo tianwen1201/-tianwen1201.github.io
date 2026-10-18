@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 760" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E4D8E8"/>
+      <stop offset="0.28" stop-color="#F2D3C4"/>
+      <stop offset="0.55" stop-color="#F8D9BF"/>
+      <stop offset="0.75" stop-color="#FAE6D4"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.52" cy="0.42" r="0.4">
+      <stop offset="0" stop-color="#FFF1E2" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#FFF1E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="far" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#CDB2C6"/>
+      <stop offset="1" stop-color="#EBCDC0"/>
+    </linearGradient>
+    <linearGradient id="peak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B98FA6"/>
+      <stop offset="0.55" stop-color="#C99D9E"/>
+      <stop offset="1" stop-color="#E2B996"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9FB2B4"/>
+      <stop offset="1" stop-color="#D3BBB0"/>
+    </linearGradient>
+    <linearGradient id="hillL" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E5C07E"/>
+      <stop offset="1" stop-color="#D9AE78"/>
+    </linearGradient>
+    <linearGradient id="hillR" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#C9B46E"/>
+      <stop offset="1" stop-color="#E3C58C"/>
+    </linearGradient>
+    <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F1CFCF"/>
+      <stop offset="0.5" stop-color="#F7E2DD"/>
+      <stop offset="1" stop-color="#FBF8F5"/>
+    </linearGradient>
+    <linearGradient id="grass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#C9C27A"/>
+      <stop offset="0.5" stop-color="#9FBB76"/>
+      <stop offset="1" stop-color="#B9CD8C"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF8F5" stop-opacity="0"/>
+      <stop offset="1" stop-color="#FBF8F5" stop-opacity="1"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="22"/></filter>
+    <filter id="haze"><feGaussianBlur stdDeviation="2.5"/></filter>
+    <filter id="brush" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.04" numOctaves="3" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="14"/>
+      <feGaussianBlur stdDeviation="0.8"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>
+      <feColorMatrix values="0 0 0 0 0.45  0 0 0 0 0.35  0 0 0 0 0.35  0 0 0 0.06 0"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="760" fill="url(#sky)"/>
+  <rect width="1600" height="760" fill="url(#glow)"/>
+
+  <!-- clouds -->
+  <g filter="url(#soft)" opacity="0.9">
+    <ellipse cx="300" cy="120" rx="260" ry="60" fill="#FFF4EA"/>
+    <ellipse cx="520" cy="190" rx="200" ry="40" fill="#F6C9AE"/>
+    <ellipse cx="1150" cy="90" rx="320" ry="70" fill="#FFF4EA"/>
+    <ellipse cx="1380" cy="200" rx="220" ry="45" fill="#F4C2AE"/>
+    <ellipse cx="820" cy="150" rx="180" ry="38" fill="#FDEADB"/>
+    <ellipse cx="80" cy="260" rx="160" ry="34" fill="#EFC9C0"/>
+  </g>
+  <g filter="url(#soft)" opacity="0.55">
+    <ellipse cx="700" cy="40" rx="260" ry="50" fill="#D9DCE8"/>
+    <ellipse cx="1500" cy="40" rx="200" ry="45" fill="#D6DDE6"/>
+  </g>
+
+  <!-- birds -->
+  <g stroke="#7E6A6E" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.7">
+    <path d="M1240 150 q8 -8 16 0 q8 -8 16 0"/>
+    <path d="M1290 132 q6 -6 12 0 q6 -6 12 0"/>
+  </g>
+
+  <!-- far range -->
+  <path filter="url(#haze)" opacity="0.75" fill="url(#far)"
+        d="M0 420 L120 360 L230 395 L360 330 L470 380 L560 350 L700 395 L900 360 L1040 330 L1160 370 L1280 340 L1420 380 L1600 345 L1600 470 L0 470 Z"/>
+  <!-- teal right range -->
+  <path filter="url(#brush)" opacity="0.85" fill="url(#teal)"
+        d="M1020 430 L1130 360 L1210 395 L1300 345 L1390 390 L1480 360 L1600 405 L1600 480 L1020 480 Z"/>
+  <!-- main peaks -->
+  <path filter="url(#brush)" fill="url(#peak)"
+        d="M330 450 L430 385 L500 410 L600 330 C640 300 700 250 760 245 C820 242 880 300 930 345 L1010 410 L1080 395 L1180 455 Z"/>
+  <path filter="url(#brush)" opacity="0.8" fill="#C7A0A9"
+        d="M120 455 L230 400 L300 420 L380 380 L470 455 Z"/>
+
+  <!-- golden hills -->
+  <path filter="url(#brush)" fill="url(#hillL)"
+        d="M0 430 C120 410 260 430 380 460 C470 480 560 486 640 490 L0 520 Z"/>
+  <path filter="url(#brush)" fill="url(#hillR)"
+        d="M900 488 C1050 470 1200 440 1340 430 C1450 422 1540 430 1600 440 L1600 520 L900 520 Z"/>
+
+  <!-- lake -->
+  <path fill="url(#lake)"
+        d="M0 500 C300 486 520 492 700 488 C900 484 1150 482 1600 498 L1600 760 L0 760 Z"/>
+  <!-- reflection -->
+  <g opacity="0.22" filter="url(#haze)" transform="translate(0 980) scale(1 -1)">
+    <path fill="#C99DAA" d="M330 450 L430 385 L500 410 L600 330 C640 300 700 250 760 245 C820 242 880 300 930 345 L1010 410 L1080 395 L1180 455 Z"/>
+  </g>
+  <g stroke="#FFFFFF" stroke-width="2" opacity="0.5" stroke-linecap="round">
+    <line x1="560" y1="540" x2="700" y2="540"/>
+    <line x1="820" y1="565" x2="980" y2="565"/>
+    <line x1="420" y1="600" x2="520" y2="600"/>
+    <line x1="1080" y1="525" x2="1180" y2="525"/>
+  </g>
+
+  <!-- foreground grass -->
+  <path filter="url(#brush)" fill="url(#grass)"
+        d="M0 520 C120 505 260 512 380 528 C520 548 600 570 640 590 C560 610 470 640 360 680 C240 720 120 740 0 760 Z"/>
+  <path filter="url(#brush)" opacity="0.9" fill="#D7CB8A"
+        d="M1600 500 C1500 505 1380 512 1280 525 C1220 535 1200 550 1260 560 C1380 575 1500 585 1600 600 Z"/>
+  <g fill="#EBA9BE">
+    <circle cx="60" cy="640" r="4"/><circle cx="110" cy="690" r="5"/><circle cx="170" cy="610" r="3.5"/>
+    <circle cx="230" cy="660" r="4.5"/><circle cx="300" cy="600" r="3"/><circle cx="40" cy="710" r="5"/>
+    <circle cx="350" cy="630" r="3.5"/><circle cx="150" cy="560" r="3"/><circle cx="260" cy="570" r="3"/>
+  </g>
+  <g fill="#FFF6EE">
+    <circle cx="90" cy="600" r="3"/><circle cx="200" cy="700" r="3.5"/><circle cx="320" cy="660" r="3"/>
+    <circle cx="420" cy="590" r="2.5"/><circle cx="130" cy="650" r="2.5"/>
+  </g>
+  <g fill="#E8B4C6">
+    <circle cx="1350" cy="545" r="3"/><circle cx="1450" cy="560" r="3.5"/><circle cx="1540" cy="575" r="3"/>
+  </g>
+
+  <rect y="560" width="1600" height="200" fill="url(#fade)"/>
+  <rect width="1600" height="760" filter="url(#grain)"/>
+</svg>
