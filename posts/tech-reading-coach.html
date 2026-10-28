@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>不替学生读懂：生成式 AI 阅读教练的设计与迭代｜韩天雯</title>
-<meta name="description" content="我的中高级综合课每周三次、每次五十分钟，课堂上没有专门的阅读训练时间。学期第一周，我请三位学生课外阅读一篇真实的留学生博客。三位学生都把生词列为最大的障碍：两位在阅读工具之外查词，一位把文章切成小段逐段“啃”，她说这样“花了很长时间，感觉很……">
+<meta name="description" content="我的三年级会话与写作课（Conversation and Composition I）每周三次、每次五十分钟，课堂上没有专门的阅读训练时间。学期第一周，我请三位学生课外阅读一篇真实的留学生博客。三位学生都把生词列为最大的障碍：两位在阅读工具……">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
 <div class="scene" style="background-image:url('../images/landscape.svg')">
   <header class="site-header">
     <a class="brand" href="../index.html"><span class="brand-zh">韩天雯</span><span class="brand-star" aria-hidden="true">✦</span></a>
-    <nav class="site-nav" aria-label="主导航"><a href="../index.html">个人介绍</a><a href="../projects.html">Projects</a><a href="../teaching.html">中文教学</a><a href="../technology.html" aria-current="page">Technology</a></nav>
+    <nav class="site-nav" aria-label="主导航"><div class="nav-item"><a class="nav-top" href="../index.html">个人介绍</a></div><div class="nav-item has-menu"><a class="nav-top" href="../projects.html">Projects</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="展开 Projects 菜单"><svg viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="menu"><a class="menu-all" href="../projects.html">查看全部 Projects →</a><a class="menu-link" href="../posts/project-inquiry.html">什么值得我们关心？——中高级中文学期探究与公众展示项目</a><a class="menu-link" href="../posts/project-press.html">当学生成为“中文发言人”：新闻媒体中文课的模拟记者会</a><a class="menu-link" href="../posts/project-idioms.html">讲给孩子听的成语：高级中文古文改写与视频创作项目</a></div></div><div class="nav-item has-menu"><a class="nav-top" href="../teaching.html">中文教学</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="展开 中文教学 菜单"><svg viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="menu"><a class="menu-all" href="../teaching.html">查看全部 中文教学 →</a><p class="menu-group">初级｜体演文化与口语评估</p><a class="menu-link" href="../posts/teaching-assessment.html">在情境共演中“记忆未来”：初级中文口语评估的情境链设计</a><a class="menu-link" href="../posts/teaching-behavioral-culture.html">让文化落在言行之间：初级听说课中的行为文化教学</a><p class="menu-group">中高级至高级｜视听材料与能力培养</p><a class="menu-link" href="../posts/teaching-bao.html">一部动画短片，一堂叙述课：《包宝宝》中高级教学设计</a><a class="menu-link" href="../posts/teaching-listening.html">先听懂，再看懂：一份听力单背后的二语听力策略</a><a class="menu-link" href="../posts/teaching-social-china.html">从“老外”的视频看真实的中国：《别见外》视听说教材使用心得</a><p class="menu-group">专门领域中文</p><a class="menu-link" href="../posts/teaching-legal.html">从真人秀到谈判桌：法律中文课的体演任务设计</a><a class="menu-link" href="../posts/teaching-domain.html">从词汇积累到专业表达：任务链驱动的领域中文教学</a></div></div><div class="nav-item has-menu"><a class="nav-top" href="../technology.html" aria-current="page">Technology</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="展开 Technology 菜单"><svg viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="menu"><a class="menu-all" href="../technology.html">查看全部 Technology →</a><a class="menu-link" href="../posts/tech-reading-coach.html">不替学生读懂：生成式 AI 阅读教练的设计与迭代</a><a class="menu-link" href="../posts/tech-listening-lab.html">Hear it, Notice it, Say it：新闻听力练习平台 Listening Lab</a></div></div></nav>
     <a class="btn btn-dark header-cta" href="mailto:than1@olemiss.edu">联系我</a>
   </header>
   
@@ -26,10 +26,10 @@
 <div class="pills"><span class="pill pill-level">中高级</span><span class="pill">阅读理解</span><span class="pill">AI 工具设计</span><span class="pill">TCLT 2026 报告</span></div>
 <h1>不替学生读懂：生成式 AI 阅读教练的设计与迭代</h1>
 <p class="en-sub" lang="en">Not Reading for Them: Designing a Generative AI Reading Coach</p>
-<div class="prose"><p><em>本文内容曾在 TCLT 2026 国际汉语教学研讨会上报告：Designing a Generative AI Reading Coach to Scaffold L2 Chinese Discourse Comprehension: A Design-Based Study。</em></p>
+<div class="prose"><p><em>本文内容曾在科技与中文教学国际研讨会（TCLT 2026，线上）上报告：Designing a Generative AI Reading Coach to Scaffold L2 Chinese Discourse Comprehension: A Design-Based Study。这项工作是我博士论文“Chatbot-Guided Questioning and Main-Idea Construction in L2 Chinese Reading”的先导研究（2026 年秋季）。</em></p>
 <p class="try"><a class="btn" href="https://reading-coach.hanlaoshi.workers.dev/" target="_blank" rel="noopener">体验 Chinese Reading Coach →</a><span>　（学生使用版，进入时需输入中文名字）</span></p>
 <h2>问题：学生说“生词太多”，但困难不止于此</h2>
-<p>我的中高级综合课每周三次、每次五十分钟，课堂上没有专门的阅读训练时间。学期第一周，我请三位学生课外阅读一篇真实的留学生博客。三位学生都把生词列为最大的障碍：两位在阅读工具之外查词，一位把文章切成小段逐段“啃”，她说这样“花了很长时间，感觉很没效率”。</p>
+<p>我的三年级会话与写作课（Conversation and Composition I）每周三次、每次五十分钟，课堂上没有专门的阅读训练时间。学期第一周，我请三位学生课外阅读一篇真实的留学生博客。三位学生都把生词列为最大的障碍：两位在阅读工具之外查词，一位把文章切成小段逐段“啃”，她说这样“花了很长时间，感觉很没效率”。</p>
 <p>但从她们的回答中，我看到了另一个问题：三位学生中有两位，最初的表述只停留在文章的“话题”层面，说出了文章“关于什么”，却没有说出作者“在说什么”。问题不只是词汇，而是如何把局部的理解整合为全文的意义（Kintsch &amp; van Dijk, 1978）。</p>
 <h2>为什么是 chatbot，又为什么要格外小心</h2>
 <p>一对一的陪读，教师很难每周为每位学生提供；AI 却可以根据学生当下的回答进行追问，并留下完整的过程记录。已有研究表明，依据教学原则设计的 AI 导师，学习效果可以优于课堂主动学习（Kestin et al., 2025）。但风险同样明显：缺乏教学护栏的生成式 AI 可能损害学习（Bastani et al., 2025）；当学生用 AI 替代自己的思考时，理解会变浅，基础较弱的学生受影响更大（Lehmann et al., 2024）。因此，我关心的不是“用不用 AI”，而是如何让 AI 帮忙，又不替学生思考。</p>
@@ -63,5 +63,27 @@
     <p>韩天雯 Tianwen Han · University of Mississippi · than1@olemiss.edu</p>
   </div>
 </footer>
+<script>
+(function () {
+  var items = document.querySelectorAll('.nav-item.has-menu');
+  function closeAll(except) {
+    items.forEach(function (it) {
+      if (it !== except) { it.classList.remove('open'); var b = it.querySelector('.nav-caret'); if (b) b.setAttribute('aria-expanded', 'false'); }
+    });
+  }
+  items.forEach(function (it) {
+    var btn = it.querySelector('.nav-caret');
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = !it.classList.contains('open');
+      closeAll(it);
+      it.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', function (e) { if (!e.target.closest('.nav-item')) closeAll(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(); });
+})();
+</script>
 </body>
 </html>

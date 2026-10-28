@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hear it, Notice it, Say it：新闻听力练习平台 Listening Lab｜韩天雯</title>
-<meta name="description" content="Listening Lab 是我为 2026 年秋季高级新闻听力课搭建的线上听力练习平台。平台中的听力材料，是我和郝荣荣老师根据真实新闻改编而成的课文。我把每一篇课文拆解为一个完整的听力流程，让学生在课外有步骤、有方法地练习听力。平台由我借……">
+<meta name="description" content="Listening Lab 是我为 2026 年秋季三年级新闻媒体中文课（Media Chinese I）搭建的交互式听力练习网站，使用 ChatGPT Codex 开发。听力材料是我和郝荣荣老师根据真实新闻改编的课文；每篇课文被拆解为一个……">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
 <div class="scene" style="background-image:url('../images/landscape.svg')">
   <header class="site-header">
     <a class="brand" href="../index.html"><span class="brand-zh">韩天雯</span><span class="brand-star" aria-hidden="true">✦</span></a>
-    <nav class="site-nav" aria-label="主导航"><a href="../index.html">个人介绍</a><a href="../projects.html">Projects</a><a href="../teaching.html">中文教学</a><a href="../technology.html" aria-current="page">Technology</a></nav>
+    <nav class="site-nav" aria-label="主导航"><div class="nav-item"><a class="nav-top" href="../index.html">个人介绍</a></div><div class="nav-item has-menu"><a class="nav-top" href="../projects.html">Projects</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="展开 Projects 菜单"><svg viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="menu"><a class="menu-all" href="../projects.html">查看全部 Projects →</a><a class="menu-link" href="../posts/project-inquiry.html">什么值得我们关心？——中高级中文学期探究与公众展示项目</a><a class="menu-link" href="../posts/project-press.html">当学生成为“中文发言人”：新闻媒体中文课的模拟记者会</a><a class="menu-link" href="../posts/project-idioms.html">讲给孩子听的成语：高级中文古文改写与视频创作项目</a></div></div><div class="nav-item has-menu"><a class="nav-top" href="../teaching.html">中文教学</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="展开 中文教学 菜单"><svg viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="menu"><a class="menu-all" href="../teaching.html">查看全部 中文教学 →</a><p class="menu-group">初级｜体演文化与口语评估</p><a class="menu-link" href="../posts/teaching-assessment.html">在情境共演中“记忆未来”：初级中文口语评估的情境链设计</a><a class="menu-link" href="../posts/teaching-behavioral-culture.html">让文化落在言行之间：初级听说课中的行为文化教学</a><p class="menu-group">中高级至高级｜视听材料与能力培养</p><a class="menu-link" href="../posts/teaching-bao.html">一部动画短片，一堂叙述课：《包宝宝》中高级教学设计</a><a class="menu-link" href="../posts/teaching-listening.html">先听懂，再看懂：一份听力单背后的二语听力策略</a><a class="menu-link" href="../posts/teaching-social-china.html">从“老外”的视频看真实的中国：《别见外》视听说教材使用心得</a><p class="menu-group">专门领域中文</p><a class="menu-link" href="../posts/teaching-legal.html">从真人秀到谈判桌：法律中文课的体演任务设计</a><a class="menu-link" href="../posts/teaching-domain.html">从词汇积累到专业表达：任务链驱动的领域中文教学</a></div></div><div class="nav-item has-menu"><a class="nav-top" href="../technology.html" aria-current="page">Technology</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="展开 Technology 菜单"><svg viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="menu"><a class="menu-all" href="../technology.html">查看全部 Technology →</a><a class="menu-link" href="../posts/tech-reading-coach.html">不替学生读懂：生成式 AI 阅读教练的设计与迭代</a><a class="menu-link" href="../posts/tech-listening-lab.html">Hear it, Notice it, Say it：新闻听力练习平台 Listening Lab</a></div></div></nav>
     <a class="btn btn-dark header-cta" href="mailto:than1@olemiss.edu">联系我</a>
   </header>
   
@@ -23,11 +23,11 @@
 <main class="wrap">
 <article class="post">
 <a class="back" href="../technology.html">← Technology-Enhanced Teaching</a>
-<div class="pills"><span class="pill pill-level">高级</span><span class="pill">新闻听力</span><span class="pill">AI 工具设计</span></div>
+<div class="pills"><span class="pill pill-level">中高级</span><span class="pill">新闻听力</span><span class="pill">AI 工具设计</span></div>
 <h1>Hear it, Notice it, Say it：新闻听力练习平台 Listening Lab</h1>
 <p class="en-sub" lang="en">Listening Lab: A News Listening Practice Platform</p>
 <div class="prose"><p class="try"><a class="btn" href="https://chinese-listening-lab.tianwen1201.chatgpt.site" target="_blank" rel="noopener">体验 Listening Lab →</a><span></span></p>
-<p>Listening Lab 是我为 2026 年秋季高级新闻听力课搭建的线上听力练习平台。平台中的听力材料，是我和郝荣荣老师根据真实新闻改编而成的课文。我把每一篇课文拆解为一个完整的听力流程，让学生在课外有步骤、有方法地练习听力。平台由我借助 AI 编程工具搭建，可以调节播放速度，并控制是否显示文本。</p>
+<p>Listening Lab 是我为 2026 年秋季三年级新闻媒体中文课（Media Chinese I）搭建的交互式听力练习网站，使用 ChatGPT Codex 开发。听力材料是我和郝荣荣老师根据真实新闻改编的课文；每篇课文被拆解为一个完整的听力流程，供学生课外练习。网站可调节播放速度，并控制是否显示文本。</p>
 <p>它的设计源于我此前的纸质听力单（见“中文教学”栏目《先听懂，再看懂》）。纸质听力单解决了“怎样听”的问题，但学生仍需要在音频、文本和作业文档之间来回切换。Listening Lab 把整个流程整合进同一个界面，并增加了跟读和循环复习两个环节。</p>
 <h2>五个步骤</h2>
 <p><strong>1. Gist：听大意</strong>　先完整播放全文，不追求听懂每个字，然后选择最能概括报道主旨的一项。</p>
@@ -62,5 +62,27 @@
     <p>韩天雯 Tianwen Han · University of Mississippi · than1@olemiss.edu</p>
   </div>
 </footer>
+<script>
+(function () {
+  var items = document.querySelectorAll('.nav-item.has-menu');
+  function closeAll(except) {
+    items.forEach(function (it) {
+      if (it !== except) { it.classList.remove('open'); var b = it.querySelector('.nav-caret'); if (b) b.setAttribute('aria-expanded', 'false'); }
+    });
+  }
+  items.forEach(function (it) {
+    var btn = it.querySelector('.nav-caret');
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = !it.classList.contains('open');
+      closeAll(it);
+      it.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', function (e) { if (!e.target.closest('.nav-item')) closeAll(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(); });
+})();
+</script>
 </body>
 </html>
