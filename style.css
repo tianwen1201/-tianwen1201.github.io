@@ -289,3 +289,11 @@ h2.group::before { content: "↓"; color: var(--rose); font-weight: 400; }
 .home-sections .prose li { padding-left: 1.1em; position: relative; margin-bottom: .55em; }
 .home-sections .prose li::before { content: ""; position: absolute; left: 0; top: .85em; width: 5px; height: 5px; border-radius: 50%; background: var(--rose); }
 .home-sections .sub-title:first-child { margin-top: 8px; }
+.intro-grid { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 32px; align-items: start; }
+.portrait { margin: 6px 0 0; }
+.portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 20px; border: 1px solid var(--rule); box-shadow: 0 14px 30px -22px rgba(111, 60, 72, .5); }
+@media (max-width: 640px) {
+  .intro-grid { grid-template-columns: 1fr; gap: 20px; }
+  .portrait { max-width: 200px; }
+}
+.intro-grid .prose p { text-align: left; }
